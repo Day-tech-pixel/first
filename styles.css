@@ -1,0 +1,37 @@
+
+
+
+body {
+
+    padding-bottom: 200px;
+    
+}
+
+h1{
+    
+    text-align: center;
+    margin-top: 20px;
+
+}
+h3{
+    text-align: center;
+    color:blueviolet;
+}
+
+p{
+
+    text-align: center;
+}
+
+ul{
+   
+    display: inline-block;
+    border: 5px solid pink;
+    padding: 5px 10px;
+    border-radius: 8px;
+
+}
+
+li{
+    color: aquamarine;
+}
