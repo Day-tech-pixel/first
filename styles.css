@@ -20,10 +20,20 @@ h3{
 
 p{
 
-    text-align: center;
+    text-align:justify;
 }
 
 .logo {
     display: block;
     margin: 0 auto;
+}
+
+.Email {
+
+    margin-top: 100px;
+}
+
+button {
+    background-color: rgb(224, 76, 150);
+    color: rgb(12, 6, 6);
 }
