@@ -125,7 +125,6 @@ console.log("Agora sim!!!")
    function minhaFuncao () {
     console.log("Testando");
    }
-
    minhaFuncao();
 
    const a = 10;
@@ -326,7 +325,7 @@ console.log("Agora sim!!!")
     const myName = "Day";
     console.log(myName.length);
 
-    //MÉTODOS
+    //MÉTODOS -- uma concatenação de arrays com concat 
 
     const otherNumbers = [1, 2, 3];
     const allNumbers = numbers.concat(otherNumbers);
@@ -334,6 +333,98 @@ console.log("Agora sim!!!")
 
     const text = "algum texto";
     console.log(text.split ());
+
+    //OBJETOS -- Fica em um bloco de {} --
+
+    const person = {
+        Nome: "Day",
+        Idade: 33,
+        Profissão: "Policial"
+    }
+    console.log(person);
+    console.log(person.Nome);
+    console.log(person.Nome.length);
+
+    person.Escolaridade = "Ensino Superior";
+    console.log(person);
+
+    delete person.Escolaridade;
+    console.log(person);
+
+    const obj = {
+        a: "teste",
+        b: true
+    };
+
+    console.log(obj instanceof Object);
+    
+    const obj2 = {
+        c: []
+    }
+
+    Object.assign(obj2, obj );
+
+    console.log(obj2); 
+
+    console.log(Object.keys(obj));
+    console.log(Object.keys(obj2));
+    console.log(Object.keys(person));
+
+    console.log(Object.entries(person)); //ALém da chave o valor
+
+
+    //MUTAÇÃO - Uma referência de um objeto já criado
+
+   /*
+   
+   const a = {
+    nome: "Daya",
+    };
+
+    const b = a;
+
+    console.log(a);
+    console.log(b);
+
+    console.log(a === b);
+    
+    */
+
+
+
+
+    //Loops em ARRAYS - percorrer os elementos através de estruturas de repetição(for e while)
+
+    const users = ["Doane", "Kin", "Andressa", "Patricia"]
+
+    for(let i = 0; i < user.length; i++) {
+        console.log(`Listando o usuário: ${users [i]}`);
+    }
+
+     //PUSH e POP
+
+     const array = ["a", "b", "c", ];
+     array.push("d");
+     console.log(array);
+
+     array.pop("d");
+     console.log(array); 
+     console.log(array.length);
+
+     //SHIFT (Remove o primeiro elemento do array) e UNSHIFT (adiciona itens ao início do array)
+     
+     const letters = ["a", "b", "c"]; 
+     const letter = letters.shift();
+    console.log(letter);      
+    console.log(letters);
+
+    letters.unshift("d", "f", "g");
+    console.log(letters);
+  
+    //indexOf e lastIndexOf --
+
+
+
 
 
 
