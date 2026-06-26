@@ -302,9 +302,9 @@ console.log("Agora sim!!!")
 
     }
 
-    const num = 6;
+   /* const num = 6;
     const result = factorial(num);
-    console.log(`O fatorial do número ${num} é ${result}`); 
+    console.log(`O fatorial do número ${num} é ${result}`); */
 
 
 
@@ -401,7 +401,7 @@ console.log("Agora sim!!!")
         console.log(`Listando o usuário: ${users [i]}`);
     }
 
-     //PUSH e POP
+     //MÉTODOS: PUSH e POP
 
      const array = ["a", "b", "c", ];
      array.push("d");
@@ -411,7 +411,7 @@ console.log("Agora sim!!!")
      console.log(array); 
      console.log(array.length);
 
-     //SHIFT (Remove o primeiro elemento do array) e UNSHIFT (adiciona itens ao início do array)
+     //MÉTODOS: SHIFT (Remove o primeiro elemento do array) e UNSHIFT (adiciona itens ao início do array)
      
      const letters = ["a", "b", "c"]; 
      const letter = letters.shift();
@@ -421,8 +421,132 @@ console.log("Agora sim!!!")
     letters.unshift("d", "f", "g");
     console.log(letters);
   
-    //indexOf e lastIndexOf --
+    //MÉTODOS: indexOf (encontra o índice de um elemento que passamos como argumento para o método) 
+    //lastIndexOf (quando há repetições de elementos e precisamos do índice da última ocorrência) --->>> A POSIÇÃO DO ELEMENTO NA LISTA
+    
+    const myElements = [ "Morango", "Maçã", "Maçã", "Maçã", "Maçã", "Maçã", "Maçã", "Maçã", "Abacate", "Pera", "Abacate"];
 
+    console.log(myElements.indexOf("Pera"));
+    console.log(myElements[8]);
+    console.log(myElements.lastIndexOf("Pera"));
+    
+
+    // MÉTODOS: SLICE - Extrai um array menor e um array maior -- Intervalo de elementos é determinado pelos parâmetros: índice de início e índice de fim
+    //Último elemento é ignorado, se quisermos ele devemos somar 1 ao índice final.
+
+
+    const testSlice = ["a", "b", "c", "d", "e"];
+    const subArray = testSlice.slice(2, 4 + 1);
+    console.log(subArray);
+    console.log(testSlice);
+
+
+    // MÉTODOS: forEach --> como estrutura for ou while, porém é um método
+
+    const nums = [1, 2, 3, 4, 5];
+    nums.forEach((numero) => {
+        console.log(`O número é ${numero}`);
+    })
+
+// MÉTODOS: INCLUDES -- Verifica se o array tem um elemento. Utiliza o include no array e como argumento coloca o elemento que quer buscar
+
+const brands = ["BMW", "Fiat", "Hunday"];
+console.log(brands.includes ("Fiat"));
+
+if (brands.includes("BMW")){
+
+console.log("Há carros da marca BMW!");
+}
+
+//MÉTODOS: REVERSE - Inverte os elementos de um array
+
+const reverseTest = [1, 2, 3, 4, 5];
+
+reverseTest.reverse();
+console.log(reverseTest);
+
+
+//STRINGS -
+//MÉTODOS: TRIM - Remove tudo que não é texto em uma string
+const trimTest = "testando\n";
+console.log(trimTest); 
+
+// PADSTART -- Insere um texto no começo da string
+
+//SPLIT - Divide umaa string em uma array
+
+const frase = "O rato reu a roupa do Rei de Roma"
+const arrayDaFrase = frase.split (" ");
+console.log(arrayDaFrase);
+
+// JOIN --- une um array em uma string , dá pra colocar um separador para formatar a string - O contrário do SPLIT
+
+const FraseDenovo = arrayDaFrase.join(" ");
+console.log(FraseDenovo);
+
+//REPEAT -- Repete um texto n vezes, onde n é o número que colocamos como seu argumento. 
+
+const palavra = "Testando ";
+
+console.log(palavra.repeat(5));
+
+//REST OPERATOR/ REST PARAMETERS -- caracterizado pelo símbolo ... Podemos utilizá-lo para receber indefinidos argumentos em uma função.
+//Assim não precisamos declara exatamente o que vamos receber, deixando a função mais ampla. 
+
+const somaInfinita = (...args) => {
+let total = 0
+for(let i = 0; i < args.length; i++) {
+    total += args[i];
+}
+
+return total;
+
+}
+
+console.log(somaInfinita(1, 2, 3));
+console.log(somaInfinita(10, 15, 5000));
+ 
+// ESTRUTURA for of
+
+const somaInfinita2 = (...args) => {
+    let total = 0;
+    for (num of args){
+        total += num;
+    }
+return total;
+};
+
+console.log(somaInfinita2(1, 2, 3, 10));
+console.log (somaInfinita2(5, 6, 7, 23, 3, 5, 50));
+
+//Destructuring - permite desestruturar algum dado
+
+const userDetails = {
+    firstName: "Day",
+    lastName: "Augusto",
+    job: "Policial Penal"
+};
+
+const{firstName, lastName, job} = userDetails;
+console.log(firstName, lastName, job);
+
+//RENOMEAR VARIÁVEIS
+
+const{ firstName: primeiroNome } = userDetails;
+console.log(firstName);
+
+//JSON - Comunicação entre API e FrontendEm formato de texto - Formato lembra Objeto Literal
+
+const myJson = '{"name": "Daya", "Idade": "33 anos ", "job": "Policial Penal" }';
+console.log(myJson);
+console.log(typeof myJson);
+
+//JASON para objeto e objeto para JSON
+
+const myObject = JSON.parse (myJson);
+console.log(myObject);
+console.log(myObject.name);
+console.log(typeof myObject);
 
 
 
