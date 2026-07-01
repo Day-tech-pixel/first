@@ -475,7 +475,7 @@ console.log(trimTest);
 
 //SPLIT - Divide umaa string em uma array
 
-const frase = "O rato reu a roupa do Rei de Roma"
+const frase = "O rato roeu a roupa do Rei de Roma"
 const arrayDaFrase = frase.split (" ");
 console.log(arrayDaFrase);
 
@@ -543,10 +543,180 @@ console.log(typeof myJson);
 
 //JASON para objeto e objeto para JSON
 
-const myObject = JSON.parse (myJson);
+/*const myObject = JSON.parse (myJson);
 console.log(myObject);
 console.log(myObject.name);
 console.log(typeof myObject);
+
+const pessoa = {
+
+    nome: "Matheus",
+
+    getNome: function(){
+        return this.nome;
+    },
+    setNome: Function() {
+
+
+    }
+};
+
+console.log(pessoa.nome);
+console.log(pessoa.getNome()); */
+
+
+//PROTOTYPE - faz parte da arquitetura JS -Herança, onde objetos pais herdam propriedades e métodos aos filhos 
+const bool = true;
+console.log(Object.getPrototypeOf(bool));
+
+const myObject = {
+    a: "b",
+};
+
+const mySecondObject = Object.create(myObject);
+console.log(mySecondObject);
+
+console.log(mySecondObject.a);
+console.log(Object.getPrototypeOf(mySecondObject === myObject));
+
+
+//CLASSES BÁSICAS
+
+const cachorro = {
+    raca: null,
+    patas: 4,
+}
+
+const pastorAlemao = Object.create(cachorro);
+
+pastorAlemao.raca = "Pastor Alemão"
+
+console.log (pastorAlemao);
+console.log(pastorAlemao.patas);
+
+const bulldog = Object.create(cachorro)
+bulldog.raca = "Bulldog";
+console.log (bulldog);
+
+// FUNÇÕES COMO CLASSES - Função Construtora
+
+ function criarCachorro(nome, raca) {
+    const cachorro = Object.create({})
+    cachorro.nome = nome
+    cachorro.raca = raca
+    return cachorro;
+ }
+
+ const bob = criarCachorro("Bob", "Vira lata");
+ console.log(bob);
+
+const jack = criarCachorro("Jack", "Box");
+console.log(jack);
+
+// OVERRIDE - substituição de um valor por outro
+
+class Humano{
+    constructor (nome, idade) {
+
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+const matheus = new Humano ("Matheus", 31);
+console.log(matheus);
+
+
+Humano.prototype.idade = "Não definida"
+
+console.log(matheus.idade);
+console.log(Humano.prototype.idade);
+
+
+class Aviao {
+    constructor (marca, turbinas){
+this.marca = marca
+this.turbinas = turbinas
+
+}
+}
+
+const asas = Symbol();
+Aviao.prototype[asas] = 2;
+const boeing = new Aviao ("Boeing", 10);
+console.log(boeing);
+
+
+//GETTER - (GET exibe o valor de alguma propriedade) 
+//SETTER - (SET altera o valor de uma propriedade) 
+
+
+class Post {
+
+constructor (titulo, descricao, tags){
+
+    this.titulo = titulo;
+    this.descricao = descricao;
+    this.tags = tags;
+}
+
+get exibirTitulo(){
+    return `Você está lendo: ${this.titulo}`;
+
+}
+
+set adicionarTags(tags) {
+    const tagsArray = tags.split(", ")
+    this.tags = tagsArray
+}
+
+}
+
+const myPost = new Post ("Algum post", "É um post sobre programação");
+
+console.log(myPost);
+
+
+console.log(myPost.exibirTitulo);
+
+ myPost.adicionarTags = "programação, jascript, js";
+
+
+ console.log(myPost);
+
+
+ //HERANÇA --> semelhante ao prototype -- Utilizamos a palavra EXTENDS para adcionar a classe que vai trazer as propriedades e SUPER para enviar os valores para a classe pai
+
+
+ class Mamifero {
+    constructor (patas){
+        this.patas = patas
+    }
+ }
+
+class Lobo extends Mamifero {
+    constructor (patas, nome) {
+        super (patas, patas)
+            this.nome = nome
+    }
+}
+
+const shark = new Lobo (4, "Shark");
+console.log (shark);
+
+// instanceOf -- Verifica se um ojeto é pai de outro para ter certeza da ancestralidade - Verificado com objeto => classe
+
+console.log(shark instanceof Lobo);
+console.log(Lobo instanceof Mamifero);
+ 
+
+
+
+
+
+
+
+
 
 
 
