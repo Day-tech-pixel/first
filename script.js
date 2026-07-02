@@ -708,6 +708,8 @@ console.log (shark);
 
 console.log(shark instanceof Lobo);
 console.log(Lobo instanceof Mamifero);
+
+
  
 
 
