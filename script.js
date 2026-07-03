@@ -709,6 +709,57 @@ console.log (shark);
 console.log(shark instanceof Lobo);
 console.log(Lobo instanceof Mamifero);
 
+//STRICT - Deixa o JS mais rigoroso na hora de programar, deve ser declarado no topo do arquivo ou de funções - ele não limita apenas baliza a forma que você programa
+// O MÉTODO LOG de console é muito utilizado para debug
+
+let f = 1;
+let g = 2;
+
+if (f == 1) {
+f = g + 2;
+}
+
+console.log(f);
+
+for (let i = 0; i < g; i++){
+    f = f + 2;
+    console.log (f);
+}
+
+if (f > 5) {
+f = 25;
+}
+
+console.log(f);
+
+let h = 1
+let j = 2
+
+if (h == 1) {
+    h = j + 2;
+}
+
+debugger; // para pausar o código
+
+ for (let i = 0; i < j; i++)
+{
+    h = h + 2;
+
+}
+
+console.log("Executou o loop");
+
+debugger;
+
+if (h < 5) {
+    h = 25;
+}
+
+
+// TRATAMENTO DE DADOS
+
+
+
 
  
 
