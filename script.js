@@ -900,3 +900,49 @@ const gen = generator();
 console.log (gen.next().value);
 console.log (gen.next().value);
 console.log (gen.next().value);
+
+//Selecionando elemento por ID
+
+const title = document.getElementById ("title");
+console.log (title);
+
+//Selecionando elementos por classe:
+
+const products = document.getElementsByClassName ("product");
+console.log (products);
+
+//Selecionando elementos por CSS
+const productQuery = document.querySelectorAll(".product");
+console.log(productQuery);
+const mainContainer = document.querySelector("#main-container");
+console.log(mainContainer);
+
+
+//Alterando o HTML com DOM - insertBefore (Inserir elemento antes do outro); appendChild(inserir elemento dentro do outro); replaceChild(trocar um elemento pelo outro);
+/*
+const l = document.createElement("l");
+const header = title.parentElement;
+header.insertBefore(l, title);
+
+
+
+const navLinks = document.querySelector("nav ul");
+const li = document.createElement ("li");
+navLinks.appendChild
+*/
+
+// CRIANDO NÓS DE TEXTOS: createTextNode
+
+const  myText = document.createTextNode("Agora vamos colocar mais um título");
+console.log (myText);
+
+const h3 = document.createElement ("h3");
+h3.appendChild(myText);
+
+console.log(h3);
+
+const btn = document.querySelector("#my-button");
+btn.addEventListener("click", function(){
+    console.log("Clicou aqui!");
+});
+
